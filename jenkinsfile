@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+  tools {
+        jdk 'jdk17'          // JDK 17 should be set in Jenkins under Global Tool Configuration
+        maven 'Maven3'        // Maven version specified in Jenkins
+    }
+    stages {
+        stage('Checkout') {
+            steps { checkout scm }
+}
+        stage('Build') {
+            steps {
+              sh 'mvn clean install -DskipTests'
+    }
+}       
+
+
+
+   
+    }
+}
